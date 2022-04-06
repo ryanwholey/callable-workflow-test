@@ -1,0 +1,23 @@
+name: Test
+"on":
+  pull_request:
+  push:
+  workflow_dispatch:
+    inputs:
+      boolean:
+        description: Boolean test input
+        default: false
+        required: false
+        type: boolean
+      string:
+        description: String test input
+        default: test
+        required: false
+        type: string
+jobs:
+  workspace:
+    name: Call workflow
+    uses: ./.github/workflows/callable.yml
+    with:
+      boolean: ${{ github.event.inputs.boolean == true || github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}  
+      string: ${{ github.events.inputs.string || "never see this"}}

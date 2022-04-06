@@ -1,0 +1,23 @@
+name: Callable Workflow
+on:
+  workflow_call:
+    inputs:
+      boolean:
+        description: A test boolean
+        type: boolean
+        required: true
+        default: false
+      string:
+        description: A test string
+        type: string 
+        required: true
+        default: "default"
+jobs:
+  workspace:
+    runs-on: ubuntu-latest
+    outputs:
+      plan: ${{ steps.terraform.outputs.plan_json }}
+    steps:
+      - name: Show me the money!
+        shell: bash
+        run: echo "boolean| ${{ inputs.apply }}\nstring| ${{ inputs.string }}"
