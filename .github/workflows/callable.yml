@@ -20,4 +20,6 @@ jobs:
     steps:
       - name: Show me the money!
         shell: bash
-        run: echo "boolean| ${{ inputs.apply }}\nstring| ${{ inputs.string }}"
+        run: | 
+          echo boolean: "${{ inputs.apply }}"
+          echo string: "${{ inputs.string }}"
