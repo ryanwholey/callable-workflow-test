@@ -19,5 +19,5 @@ jobs:
     name: Call workflow
     uses: ./.github/workflows/callable.yml
     with:
-      boolean: false
+      boolean: true
 
