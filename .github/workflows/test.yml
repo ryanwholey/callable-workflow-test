@@ -11,11 +11,10 @@ name: Test
         type: boolean
       string:
         description: String test input
-        default: test
+        default: test-foo
         required: false
         type: string
 jobs:
   workspace:
     name: Call workflow
     uses: ./.github/workflows/callable.yml
-    # with:
