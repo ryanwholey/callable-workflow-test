@@ -6,6 +6,7 @@ on:
         type: boolean
         description: test boolean
         required: false
+        default: 'unset'
 jobs:
   workspace:
     runs-on: ubuntu-latest
