@@ -16,7 +16,5 @@ name: Test
         type: string
 jobs:
   workspace:
-    env:
-      TEST_ACC: true
     name: Call workflow
     uses: ./.github/workflows/callable.yml
