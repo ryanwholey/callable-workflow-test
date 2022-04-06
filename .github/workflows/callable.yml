@@ -1,17 +1,6 @@
 name: Callable Workflow
 on:
   workflow_call:
-    # inputs:
-      # boolean:
-      #   description: A test boolean
-      #   type: boolean
-      #   required: true
-      #   default: false
-      # string:
-      #   description: A test string
-      #   type: string 
-      #   required: true
-      #   default: "default"
 jobs:
   workspace:
     runs-on: ubuntu-latest
