@@ -4,8 +4,6 @@ on:
 jobs:
   workspace:
     runs-on: ubuntu-latest
-    outputs:
-      plan: ${{ steps.terraform.outputs.plan_json }}
     steps:
       - name: Show me the money!
         shell: bash
