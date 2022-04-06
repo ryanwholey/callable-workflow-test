@@ -12,8 +12,9 @@ jobs:
     steps:
       - name: Show me the money!
         shell: bash
-        run: |
-          echo ${{ github.event.inputs.boolean || inputs.boolean == null && ('last option') || inputs.boolean }}
+        run: | 
+          echo test inputs value: ${{ inputs.boolean == undefined}} ${{ inputs.boolean == null }} ${{ inputs.boolean != undefined }} ${{ inputs.boolean != null }}
+          echo complex: ${{ github.event.inputs.boolean || inputs.boolean == null && ('last option') || inputs.boolean }}
           echo boolean: ${{ github.event.inputs.boolean == true || github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
           echo string: "${{ github.event.inputs.string || 'default' }}"
 
