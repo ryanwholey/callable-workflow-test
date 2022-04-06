@@ -1,17 +1,17 @@
 name: Callable Workflow
 on:
   workflow_call:
-    inputs:
-      boolean:
-        description: A test boolean
-        type: boolean
-        required: true
-        default: false
-      string:
-        description: A test string
-        type: string 
-        required: true
-        default: "default"
+    # inputs:
+      # boolean:
+      #   description: A test boolean
+      #   type: boolean
+      #   required: true
+      #   default: false
+      # string:
+      #   description: A test string
+      #   type: string 
+      #   required: true
+      #   default: "default"
 jobs:
   workspace:
     runs-on: ubuntu-latest
@@ -21,5 +21,5 @@ jobs:
       - name: Show me the money!
         shell: bash
         run: | 
-          echo boolean: "${{ inputs.apply }}"
-          echo string: "${{ inputs.string }}"
+          echo boolean: "${{ github.event.inputs.boolean }}"
+          echo string: "${{ github.events.inputs.string }}"
