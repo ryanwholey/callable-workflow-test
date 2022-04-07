@@ -24,6 +24,10 @@ jobs:
           echo string: "${{ github.event.inputs.string || 'default' }}"
 
           echo dispatch ${{ github.event.inputs.boolean == null }}
+          echo dispatch ${{ github.event.inputs.boolean == false }}
+          echo dispatch ${{ github.event.inputs.boolean == true }}
+          echo dispatch ${{ github.event.inputs.boolean == 'false' }}
+          echo dispatch ${{ github.event.inputs.boolean == 'true' }}
 
 
 
