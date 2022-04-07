@@ -6,7 +6,6 @@ name: Test
     inputs:
       boolean:
         description: Boolean test input
-        default: false
         required: false
         type: boolean
       string:
