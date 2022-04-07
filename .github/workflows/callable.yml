@@ -23,13 +23,33 @@ jobs:
           echo boolean: ${{ github.event.inputs.boolean == true || github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
           echo string: "${{ github.event.inputs.string || 'default' }}"
 
-          echo dispatch ${{ github.event.inputs.boolean == null }}
-          echo dispatch ${{ github.event.inputs.boolean == false }}
-          echo dispatch ${{ github.event.inputs.boolean == true }}
-          echo dispatch ${{ github.event.inputs.boolean == 'false' }}
-          echo dispatch ${{ github.event.inputs.boolean == 'true' }}
+          echo == null ${{ inputs.boolean == null }}
+          echo == false ${{ inputs.boolean == false }}
+          echo == true ${{ inputs.boolean == true }}
+          echo == \'false\' ${{ inputs.boolean == 'false' }}
+          echo == \'true\' ${{ inputs.boolean == 'true' }}
+
+          echo == null ${{ github.event.inputs.boolean == null }}
+          echo == false ${{ github.event.inputs.boolean == false }}
+          echo == true ${{ github.event.inputs.boolean == true }}
+          echo == \'false\' ${{ github.event.inputs.boolean == 'false' }}
+          echo == \'true\' ${{ github.event.inputs.boolean == 'true' }}
 
 
 
           
+# bool unchecked:
+# == null     false
+# == false    false
+# == true     false
+# == 'false'  true
+# == 'true'   false
 
+# bool checked:
+# == null     false
+# == false    false
+# == true     false
+# == 'false'  false
+# == 'true'   true
+
+# input passed
